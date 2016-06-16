@@ -198,7 +198,7 @@ public class ExperimentActivity extends DemoBase implements OnChartGestureListen
     protected void connectServer(){
         Socket conn_serv;
         try{
-            conn_serv = new Socket("192.168.3.112", 5555);
+            conn_serv = new Socket("192.168.3.55", 5555);
             Log.v("socket setup", "s setup");
 
             String start_exp_command = "EXP_START";
