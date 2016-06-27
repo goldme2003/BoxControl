@@ -1,16 +1,18 @@
-package com.nari.boxcontrol;
+package com.nari.boxcontrol.Activity;
 
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.nari.boxcontrol.LineChartActivity1;
+import com.nari.boxcontrol.ExperimentActivity;
+import com.nari.boxcontrol.R;
 
 
 public class MainActivity extends AppCompatActivity {
+    Button siteExp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
                 startExp();
             }
         });
+
+        siteExp = (Button)findViewById(R.id.btn_site_exp);
+        siteExp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shot_siteExp_Activity = new Intent(getApplicationContext(), WorkSheetActivity.class);
+                startActivity(shot_siteExp_Activity);
+            }
+        });
+
 
 
 
