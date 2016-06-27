@@ -2,4 +2,13 @@
 <resources>
     <string name="app_name">智能运检盒子</string>
     <string name="start_experiment">开始试验</string>
+    <string name="tv_login_user">工号：</string>
+    <string name="tv_login_key">密码：</string>
+    <string name="btn_login_login">登录</string>
+    <string name="btn_login_clear">清空</string>
+    <string name="tv_login_status">运检盒子状态</string>
+    <string name="btn_site_exp">现场试验</string>
+    <string name="btn_five_comm_rules">五通一措</string>
+    <string name="btn_status_evaluation">状态评价</string>
+    <string name="btn_sys_setting">系统设置</string>
 </resources>

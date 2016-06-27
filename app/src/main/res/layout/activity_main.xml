@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.nari.boxcontrol.MainActivity">
+    tools:context="com.nari.boxcontrol.Activity.MainActivity">
 
 
     <Button
@@ -16,6 +16,38 @@
         android:text="@string/start_experiment"
         android:id="@+id/btn_start_exp"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_site_exp"
+        android:id="@+id/btn_site_exp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_five_comm_rules"
+        android:id="@+id/btn_five_comm_rules"
+        android:layout_below="@+id/btn_site_exp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_status_evaluation"
+        android:id="@+id/btn_status_evaluation"
+        android:layout_below="@+id/btn_five_comm_rules"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_sys_setting"
+        android:id="@+id/btn_sys_setting"
+        android:layout_below="@+id/btn_status_evaluation"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
 
