@@ -7,23 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.nari.boxcontrol.Activity.WorkSheetActivity">
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listview_ws"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tv_ws_choose_ws" />
+    tools:context="com.nari.boxcontrol.Activity.WorkSheetInfoActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/tv_ws_choose_ws"
-        android:id="@+id/tv_ws_choose_ws"
+        android:text="@string/tv_wsi_info"
+        android:id="@+id/tv_wsi_info"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="178dp" />
 </RelativeLayout>

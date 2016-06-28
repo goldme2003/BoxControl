@@ -33,9 +33,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MainActivity" />
-
-        <activity android:name=".Activity.WorkSheetActivity"
-            android:parentActivityName=".Activity.MainActivity"/>
+        <activity
+            android:name=".Activity.WorkSheetActivity"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity android:name=".Activity.WorkSheetInfoActivity"
+            android:parentActivityName=".Activity.WorkSheetActivity"/>
     </application>
 
 </manifest>

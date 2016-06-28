@@ -11,4 +11,11 @@
     <string name="btn_five_comm_rules">五通一措</string>
     <string name="btn_status_evaluation">状态评价</string>
     <string name="btn_sys_setting">系统设置</string>
+    <string name="tv_ws_choose_ws">请选择工作票：</string>
+    <string name="mt_wsid">工作单ID</string>
+    <string name="mt_ws_substationName">变电站名称</string>
+    <string name="mt_ws_members">工作组人员</string>
+    <string name="mt_ws_wlocation">工作地点</string>
+    <string name="st_ws_wtime">工作时间</string>
+    <string name="tv_wsi_info">工单信息</string>
 </resources>
