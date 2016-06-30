@@ -2,17 +2,29 @@ package com.nari.boxcontrol.Activity;
 
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.nari.boxcontrol.ExperimentActivity;
+import com.nari.boxcontrol.JSON.JSONParser;
 import com.nari.boxcontrol.R;
+
+import org.apache.http.NameValuePair;
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
     Button siteExp;
+    String ws_url = "http://192.168.3.55:5555/work_sheet";
+
+    JSONParser ws_parser = new JSONParser();
+    private RequestWorkSheet req_ws = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         st_exp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startExp();
+
             }
         });
 
@@ -31,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         siteExp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent shot_siteExp_Activity = new Intent(getApplicationContext(), WorkSheetActivity.class);
-                startActivity(shot_siteExp_Activity);
+
+                startExp();
+
             }
         });
 
@@ -43,8 +56,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void startExp(){
-        Intent start_exp = new Intent(this, ExperimentActivity.class);
-        startActivity(start_exp);
+        req_ws = new RequestWorkSheet();
+        req_ws.execute((Void)null);
+    }
+
+    public class RequestWorkSheet extends AsyncTask<Void, Void, String>{
+        String temp_string = null;
+
+        @Override
+        protected String doInBackground(Void... params) {
+            JSONArray ws_jarray = new JSONArray();
+            List<NameValuePair> start_param = new ArrayList<NameValuePair>();
+
+            JSONArray ws_info = ws_parser.makeHttpRequest(ws_url, "GET", start_param);
+            temp_string = ws_info.toString();
+
+
+
+            return "OK";
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            Intent shot_siteExp_Activity = new Intent(getApplicationContext(), WorkSheetActivity.class);
+            Bundle worksheetbundle = new Bundle();
+            worksheetbundle.putString("worksheetlist", temp_string);
+            shot_siteExp_Activity.putExtras(worksheetbundle);
+            startActivity(shot_siteExp_Activity);
+        }
     }
 
 

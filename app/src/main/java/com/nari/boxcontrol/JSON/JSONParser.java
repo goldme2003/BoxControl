@@ -13,6 +13,7 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,6 +29,7 @@ public class JSONParser {
 
     static InputStream is = null;
     static JSONArray jArray = null;
+    static JSONObject jobject = null;
     static String json = "";
 
     // constructor
@@ -38,7 +40,7 @@ public class JSONParser {
     // function get json from url
     // by making HTTP POST or GET mehtod
     public JSONArray makeHttpRequest(String url, String method,
-                                     List<NameValuePair> params) {
+                                      List<NameValuePair> params) {
 
         // Making HTTP request
         try {
@@ -59,7 +61,10 @@ public class JSONParser {
                 // request method is GET
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 String paramString = URLEncodedUtils.format(params, "utf-8");
-                url += "?" + paramString;
+                if (params.size() != 0){
+                    url += "?" + paramString;
+                }
+
                 HttpGet httpGet = new HttpGet(url);
 
                 HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -81,7 +86,7 @@ public class JSONParser {
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = reader.readLine()) != null) {
-                sb.append(line + "\n");
+                sb.append(line);
             }
             is.close();
             json = sb.toString();
@@ -92,6 +97,8 @@ public class JSONParser {
         // try parse the string to a JSON object
         try {
             jArray = new JSONArray(json);
+            jobject = jArray.toJSONObject(jArray);
+
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
         }

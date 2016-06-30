@@ -19,26 +19,26 @@ public class WorkSheet implements Serializable {
     String substationName;
     String workAdress;
     String workContent;
-    int planStartTime;
-    int planEndTime;
+    String planStartTime;
+    String planEndTime;
     String workCondition;
     String precaution;
     String workSheetIssuer;
-    int issuerDate;
+    String issuerDate;
     String addSafetyMeasure;
-    int permitWorkTime;
+    String permitWorkTime;
     String workPermit;
     String workResponsible;
     String workTeamMember;
-    int validTimeDelay;
+    String validTimeDelay;
     String validResponsibleWorker;
-    int validWorkResponsibleTime;
+    String validWorkResponsibleTime;
     String validWorkPermit;
-    int validWorkPermitTime;
+    String validWorkPermitTime;
     String finishedWorkResponsible;
-    int finishedWorkResponsibleTime;
-    int finishedWorkPermit;
-    int finishedWorkPermitTime;
+    String finishedWorkResponsibleTime;
+    String finishedWorkPermit;
+    String finishedWorkPermitTime;
     String remark;
     String operate;
 
@@ -131,19 +131,19 @@ public class WorkSheet implements Serializable {
         this.workContent = workContent;
     }
 
-    public int getPlanStartTime() {
+    public String getPlanStartTime() {
         return planStartTime;
     }
 
-    public void setPlanStartTime(int planStartTime) {
+    public void setPlanStartTime(String planStartTime) {
         this.planStartTime = planStartTime;
     }
 
-    public int getPlanEndTime() {
+    public String getPlanEndTime() {
         return planEndTime;
     }
 
-    public void setPlanEndTime(int planEndTime) {
+    public void setPlanEndTime(String planEndTime) {
         this.planEndTime = planEndTime;
     }
 
@@ -171,11 +171,11 @@ public class WorkSheet implements Serializable {
         this.workSheetIssuer = workSheetIssuer;
     }
 
-    public int getIssuerDate() {
+    public String getIssuerDate() {
         return issuerDate;
     }
 
-    public void setIssuerDate(int issuerDate) {
+    public void setIssuerDate(String issuerDate) {
         this.issuerDate = issuerDate;
     }
 
@@ -187,11 +187,11 @@ public class WorkSheet implements Serializable {
         this.addSafetyMeasure = addSafetyMeasure;
     }
 
-    public int getPermitWorkTime() {
+    public String getPermitWorkTime() {
         return permitWorkTime;
     }
 
-    public void setPermitWorkTime(int permitWorkTime) {
+    public void setPermitWorkTime(String permitWorkTime) {
         this.permitWorkTime = permitWorkTime;
     }
 
@@ -219,11 +219,11 @@ public class WorkSheet implements Serializable {
         this.workTeamMember = workTeamMember;
     }
 
-    public int getValidTimeDelay() {
+    public String getValidTimeDelay() {
         return validTimeDelay;
     }
 
-    public void setValidTimeDelay(int validTimeDelay) {
+    public void setValidTimeDelay(String validTimeDelay) {
         this.validTimeDelay = validTimeDelay;
     }
 
@@ -235,11 +235,11 @@ public class WorkSheet implements Serializable {
         this.validResponsibleWorker = validResponsibleWorker;
     }
 
-    public int getValidWorkResponsibleTime() {
+    public String getValidWorkResponsibleTime() {
         return validWorkResponsibleTime;
     }
 
-    public void setValidWorkResponsibleTime(int validWorkResponsibleTime) {
+    public void setValidWorkResponsibleTime(String validWorkResponsibleTime) {
         this.validWorkResponsibleTime = validWorkResponsibleTime;
     }
 
@@ -251,11 +251,11 @@ public class WorkSheet implements Serializable {
         this.validWorkPermit = validWorkPermit;
     }
 
-    public int getValidWorkPermitTime() {
+    public String getValidWorkPermitTime() {
         return validWorkPermitTime;
     }
 
-    public void setValidWorkPermitTime(int validWorkPermitTime) {
+    public void setValidWorkPermitTime(String validWorkPermitTime) {
         this.validWorkPermitTime = validWorkPermitTime;
     }
 
@@ -267,27 +267,27 @@ public class WorkSheet implements Serializable {
         this.finishedWorkResponsible = finishedWorkResponsible;
     }
 
-    public int getFinishedWorkResponsibleTime() {
+    public String getFinishedWorkResponsibleTime() {
         return finishedWorkResponsibleTime;
     }
 
-    public void setFinishedWorkResponsibleTime(int finishedWorkResponsibleTime) {
+    public void setFinishedWorkResponsibleTime(String finishedWorkResponsibleTime) {
         this.finishedWorkResponsibleTime = finishedWorkResponsibleTime;
     }
 
-    public int getFinishedWorkPermit() {
+    public String getFinishedWorkPermit() {
         return finishedWorkPermit;
     }
 
-    public void setFinishedWorkPermit(int finishedWorkPermit) {
+    public void setFinishedWorkPermit(String finishedWorkPermit) {
         this.finishedWorkPermit = finishedWorkPermit;
     }
 
-    public int getFinishedWorkPermitTime() {
+    public String getFinishedWorkPermitTime() {
         return finishedWorkPermitTime;
     }
 
-    public void setFinishedWorkPermitTime(int finishedWorkPermitTime) {
+    public void setFinishedWorkPermitTime(String finishedWorkPermitTime) {
         this.finishedWorkPermitTime = finishedWorkPermitTime;
     }
 

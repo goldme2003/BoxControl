@@ -18,4 +18,5 @@
     <string name="mt_ws_wlocation">工作地点</string>
     <string name="st_ws_wtime">工作时间</string>
     <string name="tv_wsi_info">工单信息</string>
+    <string name="btn_start_exp">开始试验</string>
 </resources>

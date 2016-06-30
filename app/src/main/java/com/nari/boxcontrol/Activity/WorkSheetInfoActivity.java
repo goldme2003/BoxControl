@@ -18,7 +18,7 @@ public class WorkSheetInfoActivity extends AppCompatActivity {
         TextView tv_wsi_info = (TextView)findViewById(R.id.tv_wsi_info);
 
         rec_worksheet = (WorkSheet)getIntent().getSerializableExtra("worksheetinfo");
-        tv_wsi_info.setText("id is " + rec_worksheet.getWorkSheetId() + "; substation name is " + rec_worksheet.getSubstationName());
+        tv_wsi_info.setText("id is " + rec_worksheet.getWorkSheetId() + "; substation name is " + rec_worksheet.getSubstationName() +" ;"+ rec_worksheet.getComInfoId() + ";\n");
 
 
     }
