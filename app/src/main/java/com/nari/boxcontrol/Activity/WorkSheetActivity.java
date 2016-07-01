@@ -24,9 +24,9 @@ public class WorkSheetActivity extends AppCompatActivity {
     JSONObject jo_test_ws_item1 = new JSONObject();
     JSONObject jo_test_ws_item2 = new JSONObject();
 
-    JSONArray jarray_wslist = null;
+    JSONArray jarray_wslist =new JSONArray();
 
-    JSONObject rec_json_ws_list = null;
+    JSONArray rec_json_ws_list = null;
     /*ArrayList for store json object*/
     ArrayList<JSONObject> jol_test_ws_list = new ArrayList<JSONObject>();
 
@@ -46,24 +46,35 @@ public class WorkSheetActivity extends AppCompatActivity {
         ListView ws_list = (ListView)findViewById(R.id.listview_ws);
 
         try{
-            //rec_json_ws_list = new JSONObject(getIntent().getExtras().getString("worksheetlist"));
-            jarray_wslist = new JSONArray(getIntent().getExtras().getString("worksheetlist"));
+            rec_json_ws_list = new JSONArray(getIntent().getExtras().getString("worksheetlist"));
+
+            if (rec_json_ws_list.length() != 0){
+                jarray_wslist = rec_json_ws_list;
+            }
+            //jarray_wslist = new JSONArray(getIntent().getExtras().getString("worksheetlist"));
             for (int i = 0; i < jarray_wslist.length(); i ++){
                 jol_test_ws_list.add(jarray_wslist.getJSONObject(i));
 
                 JSONObject temp_jobj = jol_test_ws_list.get(i);
+
                 int temp_worksheetid = temp_jobj.getInt("workSheetId");
                 String temp_pstime = temp_jobj.getString("planStartTime");
                 String temp_petime = temp_jobj.getString("planEndTime");
                 String temp_m_ws_id = temp_jobj.getString("mobileWorksheetID");
 
-                int temp_comid = 0;
-                if (true){
-
+                int temp_comid;
+                try{
                     temp_comid = temp_jobj.getInt("comInfoId");
+                }catch (Exception e){
+                    temp_comid = 0;
+                }
+                int temp_sid;
+                try{
+                    temp_sid = temp_jobj.getInt("substationId");
+                }catch (Exception e){
+                    temp_sid = 0;
                 }
 
-                int temp_sid = temp_jobj.getInt("substationId");
                 String temp_wd = temp_jobj.getString("workDepartment");
                 String temp_wsn = temp_jobj.getString("workSheetNum");
                 String temp_r = temp_jobj.getString("responsible");
@@ -85,7 +96,7 @@ public class WorkSheetActivity extends AppCompatActivity {
                 String temp_vrt = temp_jobj.getString("validWorkResponsibleTime");
                 String temp_vwp = temp_jobj.getString("validWorkPermit");
                 String temp_vwpt = temp_jobj.getString("validWorkPermitTime");
-                String temp_fwr = temp_jobj.getString("finisherWorkResponsible");
+                String temp_fwr = temp_jobj.getString("finishedWorkResponsible");
                 String temp_fwrt = temp_jobj.getString("finishedWorkResponsibleTime");
                 String temp_fwp = temp_jobj.getString("finishedWorkPermit");
                 String temp_fwpt = temp_jobj.getString("finishedWorkPermitTime");

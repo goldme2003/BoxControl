@@ -36,8 +36,10 @@
         <activity
             android:name=".Activity.WorkSheetActivity"
             android:parentActivityName=".Activity.MainActivity" />
-        <activity android:name=".Activity.WorkSheetInfoActivity"
-            android:parentActivityName=".Activity.WorkSheetActivity"/>
+        <activity
+            android:name=".Activity.WorkSheetInfoActivity"
+            android:parentActivityName=".Activity.WorkSheetActivity" />
+        <activity android:name=".Activity.TestStepActivity"></activity>
     </application>
 
 </manifest>
